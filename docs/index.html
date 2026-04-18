@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vamshi Barla | Licensed Realtor® | Tucson, AZ</title>
+  <title>Vamshi Barla — Licensed Realtor® — Tucson, AZ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,376 +14,288 @@
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#" class="nav__brand">
-        <span class="nav__name">Vamshi Barla</span>
-        <span class="nav__tag">Licensed Realtor® · Long Realty</span>
-      </a>
+      <a href="#" class="nav__logo">VB</a>
       <nav class="nav__links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#process">Process</a>
+        <a href="#intro">About</a>
         <a href="#services">Services</a>
         <a href="#areas">Areas</a>
-        <a href="#contact" class="btn btn--nav">Contact Me</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <a href="tel:9135936153" class="nav__phone">913‑593‑6153</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas id="particles"></canvas>
-    <div class="hero__orb hero__orb--1"></div>
-    <div class="hero__orb hero__orb--2"></div>
-
-    <div class="hero__split">
-      <!-- Left -->
-      <div class="hero__left">
-        <div class="hero__badge reveal-hero">
-          <span class="pulse-dot"></span> Tucson's Trusted Realtor
-        </div>
-        <h1 class="hero__title reveal-hero" style="--d:.1s">
-          Find Your<br/><em>Dream Home</em><br/>in Tucson
-        </h1>
-        <p class="hero__sub reveal-hero" style="--d:.2s">
-          Guiding buyers, sellers &amp; investors through the Sonoran desert real estate market with strategy, insight, and a personal touch.
-        </p>
-        <div class="hero__ctas reveal-hero" style="--d:.3s">
-          <a href="#contact" class="btn btn--gold btn--lg magnetic">Let's Talk</a>
-          <a href="tel:9135936153" class="btn btn--glass btn--lg magnetic">
-            <svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            913‑593‑6153
-          </a>
-        </div>
-        <div class="hero__stats reveal-hero" style="--d:.4s">
-          <div class="hstat">
-            <span class="hstat__n" data-target="2">0</span><span class="hstat__s">+</span>
-            <span class="hstat__l">Years Active</span>
-          </div>
-          <div class="hstat__div"></div>
-          <div class="hstat">
-            <span class="hstat__n" data-target="5">0</span>
-            <span class="hstat__l">Communities</span>
-          </div>
-          <div class="hstat__div"></div>
-          <div class="hstat">
-            <span class="hstat__n" data-target="100">0</span><span class="hstat__s">%</span>
-            <span class="hstat__l">Dedicated</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Photo -->
-      <div class="hero__right reveal-hero" style="--d:.15s">
-        <div class="hero__photo-wrap">
-          <div class="hero__photo-ring hero__photo-ring--1"></div>
-          <div class="hero__photo-ring hero__photo-ring--2"></div>
-          <div class="hero__photo-frame">
-            <img src="vamshi.jpg" alt="Vamshi Barla" class="hero__photo" />
-          </div>
-          <div class="hero__photo-badge">
-            <svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Tucson, AZ
-          </div>
-          <div class="hero__photo-tag">Long Realty</div>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="hero__photo-side">
+      <img src="vamshi.jpg" alt="Vamshi Barla" class="hero__photo" />
+      <div class="hero__photo-overlay"></div>
+      <div class="hero__watermark">TUCSON</div>
     </div>
-
-    <!-- Desert silhouette -->
-    <div class="hero__desert">
-      <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,200 L0,140 Q60,140 60,100 Q60,60 80,60 Q100,60 100,100 Q100,80 110,80 Q120,80 120,100 L120,80 Q130,80 130,100 L130,140 Q200,140 200,160 L280,160 Q280,140 280,100 Q280,40 310,40 Q340,40 340,100 Q340,70 355,70 Q370,70 370,100 L370,140 L440,140 L440,160 L560,160 Q560,140 560,110 Q560,70 585,70 Q610,70 610,110 Q610,90 622,90 Q634,90 634,110 L634,160 L720,160 Q720,140 720,115 Q720,70 750,70 Q780,70 780,115 L780,160 L900,160 L900,140 Q900,120 920,80 Q940,40 960,40 Q980,40 1000,80 Q1020,120 1020,140 L1020,160 L1100,160 L1100,140 Q1100,120 1115,100 Q1130,80 1145,100 L1145,140 L1200,140 L1200,160 Q1260,160 1280,140 Q1300,120 1320,120 Q1340,120 1360,140 L1360,160 L1440,160 L1440,200 Z" fill="#f5ede0"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container about__grid">
-      <div class="about__left">
-        <div class="about__img-stack">
-          <div class="about__img-bg"></div>
-          <div class="about__img-frame">
-            <img src="vamshi.jpg" alt="Vamshi Barla" class="about__img" />
-          </div>
-          <div class="about__img-card">
-            <div class="aic__icon">
-              <svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <strong>Serving Tucson</strong>
-              <span>5 Communities</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="about__right">
-        <p class="eyebrow reveal-up">About Me</p>
-        <h2 class="section-title reveal-up" style="--d:.05s">Hello, I'm<br/><em>Vamshi Barla</em></h2>
-        <div class="gold-line reveal-up" style="--d:.1s"></div>
-        <p class="about__lead reveal-up" style="--d:.14s">Licensed Realtor® with <strong>Long Realty</strong>, serving the Sonoran desert communities of Tucson and beyond for over two years.</p>
-        <p class="about__body reveal-up" style="--d:.18s">Whether you're upgrading, downsizing, or finding your very first home — I bring market knowledge, strategic insight, and a tailored approach to every transaction. I believe real estate should be stress-free.</p>
-        <p class="about__body reveal-up" style="--d:.22s">Reach out via <strong>text, call, or email</strong>. Whether you're ready to move or just exploring — I'm happy to help.</p>
-
-        <div class="about__contact reveal-up" style="--d:.26s">
-          <a href="tel:9135936153" class="about__clink">
-            <svg width="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            913‑593‑6153
-          </a>
-          <a href="mailto:VamshiBarla@LongRealty.com" class="about__clink">
-            <svg width="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            VamshiBarla@LongRealty.com
+    <div class="hero__text-side">
+      <div class="hero__text-inner">
+        <p class="hero__eyebrow">Licensed Realtor® — Long Realty</p>
+        <h1 class="hero__title">Vamshi<br/><em>Barla</em></h1>
+        <p class="hero__desc">Guiding buyers, sellers &amp; investors through the Sonoran desert real estate market with strategy, heart, and a tailored approach.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--dark">Work With Me</a>
+          <a href="#intro" class="hero__scroll-link">
+            <span>Scroll</span>
+            <svg width="16" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="0" x2="8" y2="20"/><polyline points="3,15 8,21 13,15"/></svg>
           </a>
         </div>
-
-        <div class="pillars reveal-up" style="--d:.3s">
-          <div class="pillar"><div class="pillar__dot"></div>Market Knowledge</div>
-          <div class="pillar"><div class="pillar__dot"></div>Strategic Insight</div>
-          <div class="pillar"><div class="pillar__dot"></div>Negotiation Skills</div>
-          <div class="pillar"><div class="pillar__dot"></div>Long Realty Network</div>
+        <div class="hero__meta">
+          <div class="hero__meta-item">
+            <span class="hero__meta-n" data-target="2">0</span><span class="hero__meta-s">+</span>
+            <span class="hero__meta-l">Years in Tucson</span>
+          </div>
+          <div class="hero__meta-item">
+            <span class="hero__meta-n" data-target="5">0</span>
+            <span class="hero__meta-l">Communities</span>
+          </div>
+          <div class="hero__meta-item">
+            <span class="hero__meta-n" data-target="100">0</span><span class="hero__meta-s">%</span>
+            <span class="hero__meta-l">Dedicated</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="process section" id="process">
-    <div class="process__bg"></div>
-    <div class="container">
-      <p class="eyebrow center reveal-up">How It Works</p>
-      <h2 class="section-title center reveal-up" style="--d:.05s">Your Path to a New Home</h2>
-      <div class="gold-line center reveal-up" style="--d:.1s"></div>
-      <div class="process__steps">
-        <div class="pstep reveal-up" style="--d:.1s">
-          <div class="pstep__num">01</div>
-          <div class="pstep__icon">
-            <svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <h3>Discover</h3>
-          <p>We connect, I listen. Understanding your goals, lifestyle and budget to find properties that truly fit.</p>
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Buying</span><span class="dot">·</span>
+      <span>Selling</span><span class="dot">·</span>
+      <span>Investing</span><span class="dot">·</span>
+      <span>Tucson</span><span class="dot">·</span>
+      <span>Foothills</span><span class="dot">·</span>
+      <span>Oro Valley</span><span class="dot">·</span>
+      <span>Marana</span><span class="dot">·</span>
+      <span>Vail</span><span class="dot">·</span>
+      <span>Long Realty</span><span class="dot">·</span>
+      <span>Buying</span><span class="dot">·</span>
+      <span>Selling</span><span class="dot">·</span>
+      <span>Investing</span><span class="dot">·</span>
+      <span>Tucson</span><span class="dot">·</span>
+      <span>Foothills</span><span class="dot">·</span>
+      <span>Oro Valley</span><span class="dot">·</span>
+      <span>Marana</span><span class="dot">·</span>
+      <span>Vail</span><span class="dot">·</span>
+      <span>Long Realty</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- INTRO / ABOUT -->
+  <section class="intro" id="intro">
+    <div class="intro__grid">
+      <div class="intro__left">
+        <p class="label reveal-up">About</p>
+        <blockquote class="intro__quote reveal-up" style="--d:.08s">
+          "Whether you are upgrading, downsizing, or finding your first home — I bring the knowledge and care to make it <em>stress‑free.</em>"
+        </blockquote>
+        <div class="intro__divider reveal-up" style="--d:.12s"></div>
+        <p class="intro__bio reveal-up" style="--d:.16s">Licensed Realtor® with <strong>Long Realty</strong>, serving Tucson and the surrounding Sonoran desert communities for over two years. I specialize in guiding buyers, sellers, and investors with market knowledge, strategic insight, and a deeply personal approach.</p>
+        <div class="intro__links reveal-up" style="--d:.2s">
+          <a href="tel:9135936153">913‑593‑6153</a>
+          <a href="mailto:VamshiBarla@LongRealty.com">VamshiBarla@LongRealty.com</a>
+          <a href="http://VamshiBarla.LongRealty.com" target="_blank">LongRealty.com</a>
         </div>
-        <div class="pstep__arrow reveal-up" style="--d:.15s">
-          <svg width="40" viewBox="0 0 40 12" fill="none"><path d="M0 6 Q20 6 32 6" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/><path d="M30 2 L38 6 L30 10" stroke="var(--gold)" stroke-width="1.5" fill="none"/></svg>
+      </div>
+      <div class="intro__right reveal-up" style="--d:.1s">
+        <div class="intro__img-wrap">
+          <img src="vamshi.jpg" alt="Vamshi Barla" />
+          <div class="intro__img-tag">Licensed Realtor®<br/>Long Realty · Smart Move.</div>
         </div>
-        <div class="pstep reveal-up" style="--d:.2s">
-          <div class="pstep__num">02</div>
-          <div class="pstep__icon">
-            <svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <h3>Negotiate</h3>
-          <p>I advocate fiercely for you — pricing strategy, offer terms, and every detail handled with expertise.</p>
-        </div>
-        <div class="pstep__arrow reveal-up" style="--d:.25s">
-          <svg width="40" viewBox="0 0 40 12" fill="none"><path d="M0 6 Q20 6 32 6" stroke="rgba(201,168,76,0.5)" stroke-width="1.5" stroke-dasharray="4 3"/><path d="M30 2 L38 6 L30 10" stroke="var(--gold)" stroke-width="1.5" fill="none"/></svg>
-        </div>
-        <div class="pstep reveal-up" style="--d:.3s">
-          <div class="pstep__num">03</div>
-          <div class="pstep__icon">
-            <svg width="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3>Close</h3>
-          <p>Seamless closing — I guide you through every document, deadline, and detail until keys are in hand.</p>
+        <div class="intro__pills">
+          <span class="pill">Market Knowledge</span>
+          <span class="pill">Strategic Insight</span>
+          <span class="pill">Negotiation Skills</span>
+          <span class="pill">Long Realty Network</span>
+          <span class="pill">Tailored Approach</span>
+          <span class="pill">Stress-Free Process</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section class="services section" id="services">
-    <div class="container">
-      <p class="eyebrow center reveal-up">What I Do</p>
-      <h2 class="section-title center reveal-up" style="--d:.05s">How I Can Help</h2>
-      <div class="gold-line center reveal-up" style="--d:.1s"></div>
-      <div class="services__grid">
-
-        <div class="scard reveal-up" style="--d:.1s">
-          <div class="scard__num">01</div>
-          <div class="scard__icon"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+  <section class="services" id="services">
+    <div class="services__header">
+      <p class="label">Services</p>
+      <h2 class="services__title reveal-up">How I<br/><em>Can Help</em></h2>
+    </div>
+    <div class="services__list">
+      <div class="srow reveal-up" style="--d:.05s">
+        <div class="srow__num">01</div>
+        <div class="srow__body">
           <h3>Buying a Home</h3>
-          <p>From first search to keys in hand — expert guidance every step of the way.</p>
-          <ul>
-            <li>Neighborhood &amp; market analysis</li>
-            <li>Offer strategy &amp; negotiation</li>
-            <li>Inspection &amp; closing support</li>
-          </ul>
-          <div class="scard__line"></div>
+          <p>From first-time buyers to seasoned investors — I'll find the right property at the right price, handling every detail from search to closing.</p>
         </div>
+        <ul class="srow__list">
+          <li>Neighborhood &amp; market analysis</li>
+          <li>Offer strategy &amp; negotiation</li>
+          <li>Inspection &amp; closing support</li>
+        </ul>
+        <a href="#contact" class="srow__cta">Get Started →</a>
+      </div>
 
-        <div class="scard scard--dark reveal-up" style="--d:.2s">
-          <div class="scard__num">02</div>
-          <div class="scard__tag">Most Popular</div>
-          <div class="scard__icon"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div class="srow srow--gold reveal-up" style="--d:.1s">
+        <div class="srow__num">02</div>
+        <div class="srow__body">
           <h3>Selling Your Home</h3>
-          <p>Maximize your sale price with expert pricing and Long Realty's marketing network.</p>
-          <ul>
-            <li>Competitive market pricing</li>
-            <li>Professional marketing</li>
-            <li>Top-dollar negotiations</li>
-          </ul>
-          <div class="scard__line"></div>
+          <p>Maximize your sale price with expert market pricing, Long Realty's powerful marketing network, and skilled negotiation on your behalf.</p>
         </div>
+        <ul class="srow__list">
+          <li>Competitive market pricing</li>
+          <li>Professional marketing</li>
+          <li>Top-dollar negotiations</li>
+        </ul>
+        <a href="#contact" class="srow__cta">Get Started →</a>
+      </div>
 
-        <div class="scard reveal-up" style="--d:.3s">
-          <div class="scard__num">03</div>
-          <div class="scard__icon"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-          <h3>Investing</h3>
-          <p>Grow your portfolio with high-potential properties and data-driven strategy.</p>
-          <ul>
-            <li>Investment property search</li>
-            <li>ROI &amp; cash-flow analysis</li>
-            <li>Local market intelligence</li>
-          </ul>
-          <div class="scard__line"></div>
+      <div class="srow reveal-up" style="--d:.15s">
+        <div class="srow__num">03</div>
+        <div class="srow__body">
+          <h3>Real Estate Investing</h3>
+          <p>Grow your portfolio with high-potential properties and data-driven investment strategy tailored to the Tucson market.</p>
         </div>
+        <ul class="srow__list">
+          <li>Investment property search</li>
+          <li>ROI &amp; cash-flow analysis</li>
+          <li>Local market intelligence</li>
+        </ul>
+        <a href="#contact" class="srow__cta">Get Started →</a>
       </div>
     </div>
   </section>
 
   <!-- AREAS -->
-  <section class="areas section" id="areas">
-    <div class="areas__bg"></div>
-    <div class="container">
-      <p class="eyebrow center reveal-up">Where I Work</p>
-      <h2 class="section-title center reveal-up" style="--d:.05s">Communities I Serve</h2>
-      <div class="gold-line center reveal-up" style="--d:.1s"></div>
-      <div class="areas__grid">
-        <div class="acard reveal-up" style="--d:.05s">
-          <div class="acard__inner">
-            <span class="acard__num">01</span>
-            <svg class="acard__pin" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Tucson</h3>
-            <p>Vibrant heart of Southern Arizona — diverse neighborhoods &amp; endless opportunity.</p>
-          </div>
-        </div>
-        <div class="acard reveal-up" style="--d:.1s">
-          <div class="acard__inner">
-            <span class="acard__num">02</span>
-            <svg class="acard__pin" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Foothills</h3>
-            <p>Stunning mountain views and upscale living in the Catalina Foothills.</p>
-          </div>
-        </div>
-        <div class="acard reveal-up" style="--d:.15s">
-          <div class="acard__inner">
-            <span class="acard__num">03</span>
-            <svg class="acard__pin" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Oro Valley</h3>
-            <p>Award-winning master-planned community with top schools &amp; golf courses.</p>
-          </div>
-        </div>
-        <div class="acard reveal-up" style="--d:.2s">
-          <div class="acard__inner">
-            <span class="acard__num">04</span>
-            <svg class="acard__pin" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Marana</h3>
-            <p>Fast-growing community with newer homes, great amenities &amp; desert charm.</p>
-          </div>
-        </div>
-        <div class="acard reveal-up" style="--d:.25s">
-          <div class="acard__inner">
-            <span class="acard__num">05</span>
-            <svg class="acard__pin" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            <h3>Vail</h3>
-            <p>Peaceful Southeast Tucson known for excellent schools &amp; family living.</p>
-          </div>
-        </div>
+  <section class="areas" id="areas">
+    <div class="areas__header">
+      <p class="label label--light">Communities</p>
+      <h2 class="areas__title reveal-up">Where<br/><em>I Work</em></h2>
+    </div>
+    <div class="areas__list">
+      <div class="arow reveal-up" style="--d:.05s">
+        <span class="arow__num">01</span>
+        <h3 class="arow__name">Tucson</h3>
+        <p class="arow__desc">The vibrant heart of Southern Arizona — diverse neighborhoods &amp; endless opportunity.</p>
+        <a href="#contact" class="arow__link">Inquire →</a>
+      </div>
+      <div class="arow reveal-up" style="--d:.1s">
+        <span class="arow__num">02</span>
+        <h3 class="arow__name">Foothills</h3>
+        <p class="arow__desc">Stunning mountain views and upscale living in the Catalina Foothills.</p>
+        <a href="#contact" class="arow__link">Inquire →</a>
+      </div>
+      <div class="arow reveal-up" style="--d:.15s">
+        <span class="arow__num">03</span>
+        <h3 class="arow__name">Oro Valley</h3>
+        <p class="arow__desc">Award-winning master-planned community with top schools &amp; golf courses.</p>
+        <a href="#contact" class="arow__link">Inquire →</a>
+      </div>
+      <div class="arow reveal-up" style="--d:.2s">
+        <span class="arow__num">04</span>
+        <h3 class="arow__name">Marana</h3>
+        <p class="arow__desc">Fast-growing community with newer homes, great amenities &amp; desert charm.</p>
+        <a href="#contact" class="arow__link">Inquire →</a>
+      </div>
+      <div class="arow reveal-up" style="--d:.25s">
+        <span class="arow__num">05</span>
+        <h3 class="arow__name">Vail</h3>
+        <p class="arow__desc">Peaceful Southeast Tucson known for excellent schools &amp; family living.</p>
+        <a href="#contact" class="arow__link">Inquire →</a>
       </div>
     </div>
   </section>
 
-  <!-- QUOTE BANNER -->
-  <section class="quote-banner">
-    <div class="qb__orb qb__orb--1"></div>
-    <div class="qb__orb qb__orb--2"></div>
-    <div class="container qb__inner">
-      <div class="qb__mark">&ldquo;</div>
-      <blockquote class="qb__text reveal-up">
-        Whether you are upgrading, downsizing, or finding your first home — I bring market knowledge, strategic insight, and a tailored approach to help you achieve your goals, <em>stress free.</em>
-      </blockquote>
-      <div class="qb__attr reveal-up" style="--d:.1s">— Vamshi Barla, Licensed Realtor®</div>
-    </div>
-  </section>
-
-  <!-- REPORT -->
-  <section class="report section">
-    <div class="container report__inner">
-      <div class="report__copy reveal-up">
-        <p class="eyebrow" style="color:var(--gold)">Stay Informed</p>
-        <h2 class="section-title" style="color:#fff">Free Local<br/>Housing Report</h2>
-        <div class="gold-line"></div>
-        <p>The Tucson market moves fast. Get your <strong>free copy of the latest local housing report</strong> — no pressure, just valuable local data so you know when the time is right.</p>
-        <a href="#contact" class="btn btn--gold btn--lg magnetic">Request Your Free Report</a>
+  <!-- REPORT STRIP -->
+  <section class="report-strip">
+    <div class="report-strip__inner">
+      <div class="report-strip__copy reveal-up">
+        <p class="label">Stay Informed</p>
+        <h2>Free Local<br/><em>Housing Report</em></h2>
+        <p>The Tucson market moves fast. Get a <strong>free copy of the latest local housing report</strong> and know when the time is right to make your move.</p>
+        <a href="#contact" class="btn btn--gold">Request Free Report</a>
       </div>
-      <div class="report__visual reveal-up" style="--d:.15s">
-        <div class="report__card">
-          <p class="report__label">Tucson Market Activity · 2025</p>
-          <div class="report__bars" id="reportBars">
-            <div class="rbar" style="--h:55%;--delay:0s"><span>Q1</span></div>
-            <div class="rbar" style="--h:70%;--delay:.1s"><span>Q2</span></div>
-            <div class="rbar" style="--h:62%;--delay:.2s"><span>Q3</span></div>
-            <div class="rbar" style="--h:85%;--delay:.3s"><span>Q4</span></div>
-            <div class="rbar rbar--gold" style="--h:95%;--delay:.4s"><span>Now</span></div>
+      <div class="report-strip__visual reveal-up" style="--d:.1s">
+        <div class="rcard">
+          <span class="rcard__label">Tucson · Market Index · 2025</span>
+          <div class="rcard__bars" id="reportBars">
+            <div class="rbar" style="--h:52%;--delay:0s"><span>Q1</span></div>
+            <div class="rbar" style="--h:68%;--delay:.1s"><span>Q2</span></div>
+            <div class="rbar" style="--h:61%;--delay:.2s"><span>Q3</span></div>
+            <div class="rbar" style="--h:84%;--delay:.3s"><span>Q4</span></div>
+            <div class="rbar rbar--gold" style="--h:96%;--delay:.4s"><span>Now</span></div>
           </div>
-          <p class="report__note">Market trending upward ↑</p>
-          <div class="report__free">FREE</div>
+          <span class="rcard__trend">↑ Market trending upward</span>
+          <div class="rcard__free">FREE</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="container contact__grid">
-      <div class="contact__copy">
-        <p class="eyebrow reveal-up">Get In Touch</p>
-        <h2 class="section-title reveal-up" style="--d:.05s">Ready to Make<br/><em>Your Move?</em></h2>
-        <div class="gold-line reveal-up" style="--d:.1s"></div>
-        <p class="reveal-up" style="--d:.15s">Whether you're buying, selling, or just starting to explore — I'd love to connect. Text, call, or email anytime.</p>
-        <div class="cmethods reveal-up" style="--d:.2s">
-          <a href="tel:9135936153" class="cmethod">
-            <div class="cmethod__icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .9h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <div><strong>Call or Text</strong><span>913‑593‑6153</span></div>
+  <section class="contact" id="contact">
+    <div class="contact__split">
+      <div class="contact__left">
+        <p class="label label--light">Contact</p>
+        <h2 class="contact__title reveal-up">Let's Make<br/><em>Your Move.</em></h2>
+        <p class="contact__sub reveal-up" style="--d:.08s">Text, call, or email — I'm here to help whether you're ready to move or just curious.</p>
+        <div class="contact__info reveal-up" style="--d:.14s">
+          <a href="tel:9135936153" class="cinfo">
+            <span class="cinfo__label">Call or Text</span>
+            <span class="cinfo__val">913‑593‑6153</span>
           </a>
-          <a href="mailto:VamshiBarla@LongRealty.com" class="cmethod">
-            <div class="cmethod__icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><strong>Email</strong><span>VamshiBarla@LongRealty.com</span></div>
+          <a href="mailto:VamshiBarla@LongRealty.com" class="cinfo">
+            <span class="cinfo__label">Email</span>
+            <span class="cinfo__val">VamshiBarla@LongRealty.com</span>
           </a>
-          <a href="http://VamshiBarla.LongRealty.com" target="_blank" class="cmethod">
-            <div class="cmethod__icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20"/></svg></div>
-            <div><strong>Website</strong><span>VamshiBarla.LongRealty.com</span></div>
+          <a href="http://VamshiBarla.LongRealty.com" target="_blank" class="cinfo">
+            <span class="cinfo__label">Website</span>
+            <span class="cinfo__val">VamshiBarla.LongRealty.com</span>
           </a>
         </div>
       </div>
-      <form class="contact__form reveal-up" style="--d:.1s" onsubmit="handleSubmit(event)">
-        <h3>Send a Message</h3>
-        <div class="frow">
-          <div class="fgroup"><label>First Name</label><input type="text" placeholder="Jane" required /></div>
-          <div class="fgroup"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
-        </div>
-        <div class="fgroup"><label>Email</label><input type="email" placeholder="jane@example.com" required /></div>
-        <div class="fgroup"><label>Phone</label><input type="tel" placeholder="(520) 000‑0000" /></div>
-        <div class="fgroup">
-          <label>I'm interested in…</label>
-          <select><option value="">Select one</option><option>Buying a Home</option><option>Selling My Home</option><option>Real Estate Investing</option><option>Free Housing Report</option><option>Just Exploring</option></select>
-        </div>
-        <div class="fgroup"><label>Message</label><textarea rows="3" placeholder="Tell me what you're looking for…"></textarea></div>
-        <button type="submit" class="btn btn--gold btn--full magnetic">Send Message</button>
-        <div class="form__success" id="formSuccess">Thanks! I'll be in touch shortly.</div>
-      </form>
+      <div class="contact__right">
+        <form class="cform reveal-up" style="--d:.1s" onsubmit="handleSubmit(event)">
+          <div class="frow">
+            <div class="fgroup"><label>First Name</label><input type="text" placeholder="Jane" required /></div>
+            <div class="fgroup"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
+          </div>
+          <div class="fgroup"><label>Email</label><input type="email" placeholder="jane@example.com" required /></div>
+          <div class="fgroup"><label>Phone</label><input type="tel" placeholder="(520) 000‑0000" /></div>
+          <div class="fgroup">
+            <label>I'm interested in…</label>
+            <select><option value="">Select one</option><option>Buying a Home</option><option>Selling My Home</option><option>Real Estate Investing</option><option>Free Housing Report</option><option>Just Exploring</option></select>
+          </div>
+          <div class="fgroup"><label>Message</label><textarea rows="3" placeholder="Tell me what you're looking for…"></textarea></div>
+          <button type="submit" class="btn btn--dark btn--full">Send Message</button>
+          <div class="form__success" id="formSuccess">Thanks! I'll be in touch shortly.</div>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer__desert">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 L0,60 Q40,60 40,30 Q40,0 55,0 Q70,0 70,30 Q70,15 78,15 Q86,15 86,30 L86,60 L200,60 L200,40 Q200,20 218,20 Q236,20 236,40 L236,60 L400,60 Q400,40 415,20 Q430,0 445,20 Q460,40 460,60 L600,60 Q600,40 615,25 Q630,10 645,25 Q660,40 660,60 L800,60 L800,45 Q800,25 820,10 Q840,0 860,10 Q880,25 880,45 L880,60 L1000,60 L1000,40 Q1000,20 1012,15 Q1024,10 1036,15 Q1048,20 1048,40 L1048,60 L1200,60 L1200,40 Q1230,40 1250,20 Q1270,0 1290,20 Q1310,40 1310,60 L1440,60 L1440,100 L0,100 Z" fill="var(--navy)"/>
-      </svg>
-    </div>
-    <div class="footer__inner container">
-      <div><p class="footer__name">Vamshi Barla</p><p class="footer__sub">Licensed Realtor® · Long Realty</p></div>
-      <div class="footer__links"><a href="#about">About</a><a href="#process">Process</a><a href="#services">Services</a><a href="#areas">Areas</a><a href="#contact">Contact</a></div>
-      <p class="footer__legal">&copy; 2025 Vamshi Barla. Licensed in Arizona. Equal Housing Opportunity.</p>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">VB</span>
+        <div>
+          <p class="footer__name">Vamshi Barla</p>
+          <p class="footer__tag">Licensed Realtor® · Long Realty</p>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="#intro">About</a>
+        <a href="#services">Services</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer__legal">&copy; 2025 Vamshi Barla. Licensed in Arizona.<br/>Equal Housing Opportunity.</p>
     </div>
   </footer>
 
