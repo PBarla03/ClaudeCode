@@ -1,138 +1,150 @@
-// ── NAV SCROLL ──
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
+// CUSTOM CURSOR
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animateCursor() {
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  cursorRing.style.left = rx + 'px';
+  cursorRing.style.top = ry + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+document.querySelectorAll('a, button, .scard, .acard, .pillar').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
+    cursor.style.background = 'rgba(201,168,76,0.4)';
+    cursorRing.style.transform = 'translate(-50%,-50%) scale(1.4)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    cursor.style.background = 'var(--gold)';
+    cursorRing.style.transform = 'translate(-50%,-50%) scale(1)';
+  });
+});
 
-// ── HAMBURGER ──
+// MAGNETIC BUTTONS
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width / 2);
+    const dy = e.clientY - (r.top + r.height / 2);
+    btn.style.transform = `translate(${dx * 0.18}px, ${dy * 0.18}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
+
+// NAV SCROLL
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+
+// HAMBURGER
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-// ── PARTICLE CANVAS ──
+// PARTICLES
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
-let particles = [];
-let W, H;
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
+let W, H, ptArr = [];
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 resize();
 window.addEventListener('resize', resize);
-
-function Particle() {
-  this.x = Math.random() * W;
-  this.y = Math.random() * H;
-  this.size = Math.random() * 1.5 + 0.3;
-  this.speedX = (Math.random() - 0.5) * 0.3;
-  this.speedY = (Math.random() - 0.5) * 0.3;
-  this.opacity = Math.random() * 0.5 + 0.1;
+function Pt() {
+  this.x = Math.random() * W; this.y = Math.random() * H;
+  this.size = Math.random() * 1.2 + 0.3;
+  this.vx = (Math.random() - .5) * .25; this.vy = (Math.random() - .5) * .25;
+  this.o = Math.random() * .4 + .05;
 }
-
-for (let i = 0; i < 80; i++) particles.push(new Particle());
-
-function animateParticles() {
+for (let i = 0; i < 70; i++) ptArr.push(new Pt());
+(function draw() {
   ctx.clearRect(0, 0, W, H);
-  particles.forEach(p => {
-    p.x += p.speedX;
-    p.y += p.speedY;
-    if (p.x < 0) p.x = W;
-    if (p.x > W) p.x = 0;
-    if (p.y < 0) p.y = H;
-    if (p.y > H) p.y = 0;
+  ptArr.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(201,168,76,${p.opacity})`;
+    ctx.fillStyle = `rgba(201,168,76,${p.o})`;
     ctx.fill();
   });
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
+  requestAnimationFrame(draw);
+})();
 
-// ── SCROLL REVEAL ──
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
+// HERO LOAD ANIMATION
+window.addEventListener('load', () => {
+  document.querySelectorAll('.reveal-hero').forEach(el => el.classList.add('loaded'));
+});
+
+// SCROLL REVEAL
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
 }, { threshold: 0.1 });
+document.querySelectorAll('.reveal-up').forEach(el => revObs.observe(el));
 
-document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
-
-// ── COUNTER ANIMATION ──
-function animateCounter(el, target, duration = 1400) {
-  const start = performance.now();
-  const update = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(ease * target);
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target;
-  };
-  requestAnimationFrame(update);
+// COUNTER ANIMATION
+function countUp(el, target, dur = 1400) {
+  const s = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - s) / dur, 1);
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+    if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+  })(s);
 }
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.hstat__n').forEach(el => countUp(el, +el.dataset.target));
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+const stats = document.querySelector('.hero__stats');
+if (stats) statsObs.observe(stats);
 
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.stat__num').forEach(el => {
-        animateCounter(el, parseInt(el.dataset.target));
-      });
-      counterObserver.unobserve(entry.target);
+// BAR CHART
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.rbar').forEach(b => b.classList.add('animated'));
+      barObs.unobserve(e.target);
     }
   });
 }, { threshold: 0.3 });
+const bars = document.getElementById('reportBars');
+if (bars) barObs.observe(bars);
 
-const heroStats = document.querySelector('.hero__stats');
-if (heroStats) counterObserver.observe(heroStats);
-
-// ── BAR CHART ANIMATION ──
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.rbar').forEach(bar => bar.classList.add('animated'));
-      barObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-const reportBars = document.querySelector('.report__bars');
-if (reportBars) barObserver.observe(reportBars);
-
-// ── ACTIVE NAV HIGHLIGHT ──
-const sections = document.querySelectorAll('section[id]');
+// PARALLAX HERO ORBS
 window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-  document.querySelectorAll('.nav__links a[href^="#"]').forEach(a => {
-    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold)' : '';
+  const y = window.scrollY;
+  document.querySelectorAll('.hero__orb').forEach((o, i) => {
+    o.style.transform = `translateY(${y * ([.12, .08][i] || .1)}px)`;
   });
 }, { passive: true });
 
-// ── FORM SUBMIT ──
+// ACTIVE NAV
+const secs = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  document.querySelectorAll('.nav__links a[href^="#"]').forEach(a => {
+    a.style.color = a.getAttribute('href') === `#${cur}` ? 'var(--gold)' : '';
+  });
+}, { passive: true });
+
+// FORM
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
+  btn.textContent = 'Sending…'; btn.disabled = true;
   setTimeout(() => {
     document.getElementById('formSuccess').style.display = 'block';
-    e.target.reset();
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
+    e.target.reset(); btn.textContent = 'Send Message'; btn.disabled = false;
   }, 900);
 }
-
-// ── SMOOTH PARALLAX ON HERO ORBS ──
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  document.querySelectorAll('.orb').forEach((orb, i) => {
-    const speed = [0.15, 0.1, 0.08][i] || 0.1;
-    orb.style.transform = `translateY(${y * speed}px)`;
-  });
-}, { passive: true });
